@@ -7,8 +7,8 @@
 <table cellspacing="2" align="center" cellpadding="8" border="0">  
 <tr><td> Name</td>   
 <td><input type="text" placeholder="Enter your name" oninput="validate_name()" id="n1"></td></tr> 
-<tr><td>Username </td>  
-<td><input type="text" placeholder="Enter last name" onblur="validate_username()" id="u1"></td></tr>   
+<tr><td>Last Name </td>  
+<td><input type="text" placeholder="Enter your username" onblur="validate_username()" id="u1"></td></tr>   
 <tr><td>Email </td>  
 <td><input type="text" placeholder="Enter your email id" onblur="validate_email()" id="e1"></td></tr>  
 <tr><td> Set Password</td>  
@@ -22,7 +22,7 @@
 <tr><td>Age</td>
 <td><input type="text" placeholder="Enter your age" onblur="validate_age()" id="age"></td></tr>
 <tr><td>  
-<input type="submit" value="Create" onClick="create_account()"/>  </td></tr>
+<input type="submit" value="Submit" onClick="create_account()"/>  </td></tr>
 </table>  
 <script type="text/javascript"> 
 
@@ -38,7 +38,7 @@ function validate_username(){
 function validate_age(){
         var age=document.getElementById("age").value;
         if(!(age>0)){
-                alert('Please enter correct age');
+                alert('Age shoud not be negative');
         }
 }
 
@@ -56,7 +56,7 @@ function validate_email(){
         var e=document.getElementById("e1").value;
         if (!email_val.test(e))  
         {  
-                alert('Invalid email format please enter valid email id');  
+                alert('Invalid email format please enter valid email');  
         }  
 }
 function p1(){
@@ -93,9 +93,12 @@ function phonenumber(inputtxt)
         if(n.length>10 || n.length<10)
         {
                 alert("Enter correct mobile number");
-                // alert(typeof n);
+                 alert(typeof n);
         }
-     
+        //if(typeof n == "string")
+        //{
+          //      alert('Do not enter string');
+        //}
 }
 
 function create_account(){  
@@ -132,7 +135,7 @@ alert("Password minimum length is 6");
 }  
 else{  
 alert("Directing to other page");  
-window.location="";  
+
 }  
 }  
 </script>  
